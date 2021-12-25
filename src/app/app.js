@@ -24,7 +24,7 @@ const playSingleRound = (playerSelection) => {
     userScore++;
     result = `You win! <br>You chose: ${playerSelection}<br>Your opponent chose: ${computerSelection}<br><br>Player score: ${userScore}<br>Computer score: ${computerScore}`;
     if (userScore === 5) {
-      result += "<br>You won the best of 5! Congratulations!!!";
+      result += "<br>You won the best of 5!";
       disableButton();
     }
   } else if (playerSelection === computerSelection) {
@@ -39,3 +39,10 @@ const playSingleRound = (playerSelection) => {
   }
   document.getElementById("result").innerHTML = result;
 };
+
+let buttons = document.querySelectorAll("input");
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    playSingleRound(button.value);
+  });
+});
