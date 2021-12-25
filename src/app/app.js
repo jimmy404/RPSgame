@@ -1,3 +1,12 @@
+let userScore = 0;
+let computerScore = 0;
+
+const disableButton = () => {
+  buttons.forEach((el) => {
+    el.disabled = true;
+  });
+};
+
 const computerPlay = () => {
   let choices = ["rock", "paper", "scissors"];
   return choices[Math.floor(Math.random() * choices.length)];
